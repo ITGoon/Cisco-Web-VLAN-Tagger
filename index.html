@@ -1,0 +1,27 @@
+ <html>
+     <head>
+      <title></title>
+     </head>
+     <body>
+        <form action=action.php method="post">
+        Port#:<br>
+          <input type="text" name="port"><br>
+	VLAN:<br>
+            <input type="text" name="vlan"><br>
+	Description:<br>
+            <input type="text" name="descrip"><br><br>
+	<input type="checkbox" name="showrun" value="yes" /> <label>Show Port Info (Make no changes)</label><br><br>
+	<input type="checkbox" name="portspeed" value="yes" /> <label>Port Speed</label><br><br>
+	<label>Select a switch:</label><br>
+	<select name="ip">
+		<option value="IP or DNS Name of Switch 1">Switch Name 1</option>
+		<option value="IP or DNS Name of Switch 2">Switch Name 2</option>
+		<option value="IP or DNS Name of Switch 3">Switch Name 3</option>
+	</select> 
+
+<br><br>
+           <input type="submit" name="submit" value="Submit">
+</form>
+<br><br><br>
+     </body>
+    </html>
