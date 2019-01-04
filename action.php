@@ -16,18 +16,18 @@ if(isset($_POST['showrun']) &&
         fclose($fh);
 
 	$final1 = fopen($path,"a+");
-        $showportscript = "/var/www/cisco/show.sh";
+        $showportscript = "show.sh";
         $final2 = file_get_contents($showportscript);
         fwrite($final1, $final2);
-        exec("chmod +x /var/www/cisco/temp_SHOW.sh");
-        exec("dos2unix /var/www/cisco/temp_SHOW.sh");
-        $showport = shell_exec("/var/www/cisco/temp_SHOW.sh");
+        exec("chmod +x temp_SHOW.sh");
+        exec("dos2unix temp_SHOW.sh");
+        $showport = shell_exec("temp_SHOW.sh");
 	$pshow1 = substr($showport, strpos($showport, "interface"));
 	$pshow2 = "";
 	echo "<pre>";
 	echo "$pshow1";
 	echo "</pre>";
-        exec("rm /var/www/cisco/temp_SHOW.sh");
+        exec("rm temp_SHOW.sh");
 
 }
 else
@@ -52,13 +52,13 @@ else
 
 
 	$final1 = fopen($path,"a+");
-	$vlanscript = "/var/www/cisco/vlan.sh";
+	$vlanscript = "vlan.sh";
 	$final2 = file_get_contents($vlanscript);
 	fwrite($final1, $final2);
-	exec("chmod +x /var/www/cisco/temp.sh");
-	exec("dos2unix /var/www/cisco/temp.sh");
-	shell_exec("/var/www/cisco/temp.sh");
-	exec("rm /var/www/cisco/temp.sh");
+	exec("chmod +x temp.sh");
+	exec("dos2unix temp.sh");
+	shell_exec("temp.sh");
+	exec("rm temp.sh");
 }
 
 ?>
